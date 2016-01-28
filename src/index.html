@@ -42,9 +42,9 @@
       win[0].requestAnimationFrame(update);
 
       function update () {
-        // var tX = $(window).scrollLeft() + (goX - $(window).scrollLeft() ) /10;
+        var tX = $(window).scrollLeft() + (goX - $(window).scrollLeft() ) /6;
         // $(window).scrollLeft(  tX  );
-        win.scrollLeft(  goX  );
+        win.scrollLeft(  tX  );
         win[0].requestAnimationFrame(update);
         // console.log('update', tX); 
       }
