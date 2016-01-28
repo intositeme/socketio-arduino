@@ -26,13 +26,28 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var socket = io();
+      var goX = 0;
+      var tW = $(document).width();
+      var win = $(window);
       socket.on('event', function(msg){
-        if (msg == "left") {
-          $(window).scrollLeft(  $(window).scrollLeft( ) + 50 );
-        } else {
-          $(window).scrollLeft(  $(window).scrollLeft( ) - 50 );
-        }
+        // if (msg == "left") {
+        //   $(window).scrollLeft(  $(window).scrollLeft( ) + 50 );
+        // } else {
+        //   $(window).scrollLeft(  $(window).scrollLeft( ) - 50 );
+        // }
+        goX = tW * Math.min(msg, 70)/60;
+        
       });
+      
+      win[0].requestAnimationFrame(update);
+
+      function update () {
+        // var tX = $(window).scrollLeft() + (goX - $(window).scrollLeft() ) /10;
+        // $(window).scrollLeft(  tX  );
+        win.scrollLeft(  goX  );
+        win[0].requestAnimationFrame(update);
+        // console.log('update', tX); 
+      }
     </script>
   </body>
 </html>
