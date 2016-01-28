@@ -2,14 +2,16 @@
 
 **Arduino hooked up to Node.js Server via USB.**
 
-Arduino pins **8** & **6** scrolls html page left/right.
+**Arduino needs to use custom PingFirmata**
+
+Arduino HC-SR04 Sonar pin **7** scrolls html page left/right.
 
 **Start Up**
 
 1. `npm install`
 2. `node index.js`
 3. Go to browser and load up [http://localhost:3000](http://localhost:3000)
-4. Play with arduino pins **6** & **8** *digital inputs*
+
 
 
 **Dependencies**
